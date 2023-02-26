@@ -2,13 +2,16 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_create_hand(_hand){
 	
-	if (ds_list_size(_hand > 0)) {
+	handSize = ds_list_size(_hand )
+	if (handSize > 0) {
+	
 		
-		for(var i =0;i<ds_list_size(_hand);i++){
+		
+		for(var i =0;i<handSize;i++){
 			
 			var card = ds_list_find_value(_hand,i);
 			scr_map_deck(card);
-			var new_card = instance_create_depth(random_range(63, 65), random_range(63, 65), -1, obj_card);
+			var new_card = instance_create_depth(x, y, -1, obj_card);
 	
 			//Spread Cards 
 			var padding = 40
@@ -16,9 +19,12 @@ function scr_create_hand(_hand){
 			var allcard_width = (padding+spr_width) * i
 			var offset = allcard_width/2
 			var dx = allcard_width - offset
-	
+			var radius = 5
+			var delta = (new_card.sprite_width)*360/(2*pi*radius)
+			
+			//where to print the first card
 			new_card.x = dx + (room_width/2) - 150
-
+			
 			// set values
 			new_card.card_name = card;
 			new_card.card_cost = card_cost
@@ -35,7 +41,8 @@ function scr_create_hand(_hand){
 			//// set card image
 			new_card.sprite_index = card_sprite;
 			new_card.image_index = card_image;
-		   	new_card.image_angle = random_range(-5,5);
+			new_card.image_angle = 1000*delta
+		   	//new_card.image_angle = random_range(-100,100);
 	
 		}
 	}

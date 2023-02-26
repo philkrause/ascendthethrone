@@ -15,11 +15,13 @@ function scr_draw_curve(x1,y1,x2,y2,start_angle,detail) {
         dist_ang = angle_difference(point_direction(x1,y1,x2,y2),start_angle);
         inc = (1/detail);
      
-        draw_primitive_begin(pr_linestrip);
+        draw_primitive_begin(pr_linelist);
         for (i=0; i<1+inc; i+=inc) {
             draw_x = x1 + (lengthdir_x(i * dist, i * dist_ang + start_angle));
             draw_y = y1 + (lengthdir_y(i * dist, i * dist_ang + start_angle));
-            draw_vertex(draw_x,draw_y);
+			draw_set_color(c_white)
+
+			draw_vertex(draw_x,draw_y);
         }
         draw_primitive_end();
         return 0;

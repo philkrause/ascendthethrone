@@ -1,19 +1,17 @@
 //attack_amount = 1
 //block = false
 //block_amount = 1
-//buff = false
+//spell = false
 //buff_amount = 1
 //allparty = false
-//exhaust = false
-//debuff = false
-//fire = false
-//fire_amount = 1
-//blind = false
 //heal = false
 //heal_amount = false
 //drawcard = false
 //discard = false
 //exhaust = false
+
+
+
 function scr_map_deck(card){
 
 	switch (card) {
@@ -22,14 +20,14 @@ function scr_map_deck(card){
 			card_sprite = spr_card2; 
 			card_image = 0;
 			card_cost = 2;
-			card_warrior = true; 
+			card_warrior = false; 
 			card_mage = true; 
-			card_archer = true;
+			card_archer = false;
 			card_heal = 0
 			card_shield = 0
 			card_attack = 0
 			card_allparty = true
-			card_description = "Revive all Teammates";
+			card_description = "Revive 1 Teammate";
 			break;
 		case ("Holy Banner"):   
 			card_sprite = spr_card2;
@@ -51,11 +49,11 @@ function scr_map_deck(card){
 			card_warrior = true;
 			card_mage = true; 
 			card_archer = false;
-			card_heal = 0
+			card_heal = 1
 			card_shield = 0
 			card_attack = 0
 			card_allparty = false
-			card_description = "Heal " + string(card_heal) + " for every discard";
+			card_description = "Heal " + string(card_heal);
 			break;
 		case ("Coin"):           
 			card_sprite = spr_card2; 
@@ -79,7 +77,7 @@ function scr_map_deck(card){
 			card_archer = false;
 			card_heal = 0
 			card_shield = 0
-			card_attack = 1
+			card_attack = 0
 			card_allparty = true
 			card_description = "Remove enemy shield"; 
 			break;
@@ -92,7 +90,7 @@ function scr_map_deck(card){
 			card_archer = false;
 			card_heal = 0
 			card_shield = 0
-			card_attack = 2
+			card_attack = 1
 			card_allparty = true
 			card_description = "Attack " + string(card_attack);
 			break;
@@ -105,7 +103,7 @@ function scr_map_deck(card){
 			card_archer = false;
 			card_heal = 0
 			card_shield = 1
-			card_attack = 2
+			card_attack = 0
 			card_allparty = false
 			card_description =  "Apply " + string(card_shield)+ " Shield to 1 hero";
 			break;
@@ -118,9 +116,9 @@ function scr_map_deck(card){
 			card_archer = false;
 			card_heal = 0
 			card_shield = 1
-			card_attack = 2
+			card_attack = 0
 			card_allparty = true
-			card_description = "Apply " + string(card_attack) + " Shield all party";
+			card_description = "Apply " + string(card_shield) + " Shield all party";
 			break;	
 	}
 	

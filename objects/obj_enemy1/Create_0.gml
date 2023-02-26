@@ -4,6 +4,7 @@
 image_index = 0
 image_speed = 5 / room_speed
 resting = true
+targeted = false
 
 hp = 5
 

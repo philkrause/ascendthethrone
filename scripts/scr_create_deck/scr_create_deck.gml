@@ -8,9 +8,10 @@ ds_list_add(deck, "Banner");
 ds_list_add(deck, "Strike");
 ds_list_add(deck, "Strike")
 ds_list_add(deck, "Strike")
+ds_list_add(deck, "Strike");
+ds_list_add(deck, "Strike");
 ds_list_add(deck, "Potion");
-ds_list_add(deck, "Potion");
-ds_list_add(deck, "Wand");
+ds_list_add(deck, "Strike");
 ds_list_add(deck, "Crown")
 ds_list_add(deck, "Crown")
 

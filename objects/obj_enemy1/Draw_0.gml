@@ -9,6 +9,9 @@ var spr_width = 16
 var hp_gap = 5
 var allheart_width = (hp_gap+spr_width) * hp
 var offset = allheart_width/2
+
+
+//Draw Health
 for(var i=0;i<hp;i++){
 	
 	var dx = (x) + i*(spr_width+hp_gap) - offset
@@ -28,3 +31,8 @@ if resting == true {
 		image_index = 0
 	}
 }
+
+//Targeted
+if targeted == true {
+	image_blend = make_colour_hsv(0, 155, 255);
+} else image_blend = c_white
